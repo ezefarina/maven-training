@@ -36,6 +36,17 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <warName>${project.build.finalName}-${project.version}</warName>
+        </configuration>
+      </plugin>
+    </plugins>
+
   </build>
 
   <profiles>

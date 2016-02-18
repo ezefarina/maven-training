@@ -5,6 +5,7 @@
 * Step 2: Module aggregation
 * Step 3: Second module aggregation
 * Step 4: Centralized dependencies management in parent POM
+* Step 5: Multi-module inherited properties
 
 ### Parent creation
 Parent POM file is created with the following archetype
@@ -53,4 +54,8 @@ This tag means that all that it contains are not dependencies itself that are st
 On the other side, we are not defining the scope on the parent, as the usage of the artifact may be different for each module. It can be done, but it depends on the case.
 
 For further info about dependencies management, check the [official doc here](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
+
+### Multi-module inherited properties
+By defining properties in the parent POM, they will be available for its childs. On the other side, if we define a property in a specific module it won't be available for its parent, as it only works downstream.
+We can do this by defining the *<properties>* section. Not necessarily have to be made in the parent, it just depends on the visibility you need for each of them.
 

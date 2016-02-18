@@ -16,6 +16,10 @@
   <name>maven-training-base-webapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <aChildOnlyConfig>aChildProperty</aChildOnlyConfig>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,6 +30,12 @@
 
   <build>
     <finalName>maven-training-base-webapp</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
   </build>
 
 </project>

@@ -11,6 +11,7 @@
   
   <modules>
     <module>maven-training-base-module</module>
+    <module>maven-training-base-webapp</module>
   </modules>
 
 </project>

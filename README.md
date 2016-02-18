@@ -3,6 +3,7 @@
 ### Steps reference
 * Step 1: Parent creation
 * Step 2: Module aggregation
+* Step 3: Second module aggregation
 
 ### Parent creation
 Parent POM file is created with the following archetype
@@ -37,4 +38,11 @@ This default structure is defined in the archetype itself and it contains the fo
 * Own POM file
 * JUnit added as a default dependency
 * (conditional) Module added as a child if there's a POM to do so in the current location
+
+### Second module aggregation
+Another child module is added, using a web application archetype
+```
+mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+```
+This new module is added as well to the parent POM, but in this case the output structure is a bit different, as the archetype is different. We have an index.jsp, a web.xml, a resources folder, and some other elements that are common (or needed) for a really basic web application.
 

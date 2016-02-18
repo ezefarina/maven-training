@@ -7,6 +7,7 @@
 * Step 4: Centralized dependencies management in parent POM
 * Step 5: Multi-module inherited properties
 * Step 6: Profiles to alter a lifecycle
+* Step 7: Plugin basic configuration
 
 ### Parent creation
 Parent POM file is created with the following archetype
@@ -69,3 +70,7 @@ mvn install -Pproduction
 For further reference about the Lifecycle, Phases and goals check [this article](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
 Fur further info about check [this other one](http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
+
+### Plugin basic configuration
+You would need to configure a plugin when you need to attach a specific functionality to a specific phase. In this example, we are speficying which should be the name of the output WAR file on the webapp module. In this case the *maven-war-plugin* is the default plugin used for war packaging during *package* phase. In this case we are explicitly adding it to parametrize the final name this war will have (of course you are able to do a lot more than this, it's just a simple example).
+Each plugin has a default phase defined, that it will be attached to if you don't define a different one.

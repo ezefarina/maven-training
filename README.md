@@ -47,3 +47,10 @@ On the other side, we are not defining the scope on the parent, as the usage of 
 ### Multi-module inherited properties
 By defining properties in the parent POM, they will be available for its childs. On the other side, if we define a property in a specific module it won't be available for its parent, as it only works downstream.
 We can do this by defining the *<properties>* section. Not necessarily have to be made in the parent, it just depends on the visibility you need for each of them.
+
+### Adapting build to different needs
+Configuring different profiles allow us to define different behaviours based on which profile is being requested. We could export a coverage report only for development, configure a different set of URLs or usernames for production, just as an example.
+In this case, the *development* profile is enabled by default (it gets executed if you don't specify a profile), and a *production* role is off by default. The difference between them is that they will set the same property with a different value. The idea is to spit out the logs to the console on development, and to a file on production environment. So depending where are we going to send our build is which profile we will activate like this:
+```
+mvn install -Pproduction
+```

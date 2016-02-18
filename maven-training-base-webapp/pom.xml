@@ -38,4 +38,22 @@
     </resources>
   </build>
 
+  <profiles>
+    <profile>
+      <id>production</id>
+      <properties>
+        <cfg.log.output>file</cfg.log.output>
+      </properties>
+    </profile>
+    <profile>
+      <id>development</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <cfg.log.output>console</cfg.log.output>
+      </properties>
+    </profile>
+  </profiles>
+
 </project>

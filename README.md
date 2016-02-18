@@ -58,3 +58,7 @@ mvn install -Pproduction
 ### Configured a plugin in a module
 You would need to configure a plugin when you need to attach a specific functionality to a specific phase. In this example, we are speficying which should be the name of the output WAR file on the webapp module. In this case the *maven-war-plugin* is the default plugin used for war packaging during *package* phase. In this case we are explicitly adding it to parametrize the final name this war will have (of course you are able to do a lot more than this, it's just a simple example).
 Each plugin has a default phase defined, that it will be attached to if you don't define a different one.
+
+### Centralized plugins management in parent POM
+As well as you are able to centralize dependencies configuration on the parent POM in order to inherit these definitions and make them common to all the submodules, you can do just the same with the plugins. This will be more powerful than the dependencies inheritance, as a plugin has a lot of configurations that the dependencies doesn't.
+In this example we are moving this config to the parent POM, and only inheriting it into the WebApp module. This is done by defining the *<pluginManagement>* tag

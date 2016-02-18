@@ -38,3 +38,8 @@ Another child module is added, using a web application archetype
 mvn archetype:generate -DgroupId=com.openenglish.maven -DartifactId=maven-training-base-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 ```
 This new module is added as well to the parent POM, but in this case the output structure is a bit different, as the archetype is different. We have an index.jsp, a web.xml, a resources folder, and some other elements that are common (or needed) for a really basic web application.
+
+### Centralized dependencies management in parent POM
+By doing so, we ensure that the utilization of the project dependencies are common to all its children, making it easier to see, manage and update them. This can be achieved by defining *<dependencyManagement>* section in the parent pom.
+This tag means that all that it contains are not dependencies itself that are strictly going to be used (besides they are potentially going to be), but they are there to be parametrized for its children to be used. We define here, that the JUnit version is 3.8.1. We will not specify the version in the *<dependencies>* version of the children as we want it to be handled by the parent only.
+On the other side, we are not defining the scope on the parent, as the usage of the artifact may be different for each module. It can be done, but it depends on the case.

@@ -14,14 +14,19 @@
     <module>maven-training-base-webapp</module>
   </modules>
 
+  <properties>
+    <cfg.log.folder>/var/log/maven-training-base/</cfg.log.folder>
+    <dependency.version.junit>3.8.1</dependency.version.junit>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>3.8.1</version>
+        <version>${dependency.version.junit}</version>
       </dependency>
-    <dependencies>
+    </dependencies>
   </dependencyManagement>
 
 </project>

@@ -8,10 +8,20 @@
 
   <artifactId>maven-training-base</artifactId>
   <name>maven-training-base</name>
-  
+
   <modules>
     <module>maven-training-base-module</module>
     <module>maven-training-base-webapp</module>
   </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+      </dependency>
+    <dependencies>
+  </dependencyManagement>
 
 </project>

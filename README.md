@@ -9,6 +9,7 @@
 * Step 6: Profiles to alter a lifecycle
 * Step 7: Plugin basic configuration
 * Step 8: Centralized plugins management in parent POM
+* Step 9: Controlled plugin configuration inheritance
 
 ### Parent creation
 Parent POM file is created with the following archetype
@@ -81,3 +82,6 @@ As well as you are able to centralize dependencies configuration on the parent P
 In this example we are moving this config to the parent POM, and only inheriting it into the WebApp module. This is done by defining the *<pluginManagement>* tag
 
 This is the [official doc](http://maven.apache.org/pom.html#Plugin_Management) about the plugin management functions
+
+### Controlled plugin configuration inheritance
+While working with pluginManagement, you can centralize a lot of configurations, but there would be the case where for a specific module you don't want to inherit the configurations as is (maybe this module has a particularity). In this case, you have the option to append, merge or override the configuration. This is the case of this example. We are overriding the incoming plugin configuration from the parent POM by setting the attribute *combine.self="override"*

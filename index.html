@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Maven Interactive Tutorial</h1>
-      <h2 class="project-tagline">maven,tutorial,mvn,apache</h2>
+      <h2 class="project-tagline"></h2>
       <a href="https://github.com/ezefarina/maven-training" class="btn">View on GitHub</a>
       <a href="https://github.com/ezefarina/maven-training/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/ezefarina/maven-training/tarball/master" class="btn">Download .tar.gz</a>
@@ -26,15 +26,24 @@
 <a id="steps-reference" class="anchor" href="#steps-reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps reference</h3>
 
 <ul>
-<li>Step 1: Parent creation</li>
-<li>Step 2: Module aggregation</li>
-<li>Step 3: Second module aggregation</li>
-<li>Step 4: Centralized dependencies management in parent POM</li>
-<li>Step 5: Multi-module inherited properties</li>
-<li>Step 6: Profiles to alter a lifecycle</li>
-<li>Step 7: Plugin basic configuration</li>
-<li>Step 8: Centralized plugins management in parent POM</li>
-<li>Step 9: Controlled plugin configuration inheritance</li>
+<li>Step 1: <a href="#parent-creation">Parent creation</a>
+</li>
+<li>Step 2: <a href="#module-aggregation">Module aggregation</a>
+</li>
+<li>Step 3: <a href="#second-module-aggregation">Second module aggregation</a>
+</li>
+<li>Step 4: <a href="#centralized-dependencies-management-in-parent-pom">Centralized dependencies management in parent POM</a>
+</li>
+<li>Step 5: <a href="#multi-module-inherited-properties">Multi-module inherited properties</a>
+</li>
+<li>Step 6: <a href="#profiles-to-alter-a-lifecycle">Profiles to alter a lifecycle</a>
+</li>
+<li>Step 7: <a href="#plugin-basic-configuration">Plugin basic configuration</a>
+</li>
+<li>Step 8: <a href="#centralized-plugins-management-in-parent-pom">Centralized plugins management in parent POM</a>
+</li>
+<li>Step 9: <a href="#controlled-plugin-configuration-inheritance">Controlled plugin configuration inheritance</a>
+</li>
 </ul>
 
 <h3>
@@ -42,14 +51,14 @@
 
 <p>Parent POM file is created with the following archetype</p>
 
-<pre><code>mvn archetype:generate -DgroupId=com.openenglish.maven -DartifactId=maven-training-base -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -DinteractiveMode=false
+<pre><code>mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -DinteractiveMode=false
 </code></pre>
 
 <p>Defined the following elements:</p>
 
 <ul>
 <li>modelVersion: Defines the XSD version used for the XML validation of the current POM file</li>
-<li>groupId: Package formatted name of the project or group of projects. eg. org.apache.maven, com.openenglish.lp2.persistence</li>
+<li>groupId: Package formatted name of the project or group of projects. eg. org.apache.maven</li>
 <li>version: Version identifier for the pair groupId:artifactId
 
 <ul>
@@ -72,7 +81,7 @@
 
 <p>A child module is added, based on the following archetype</p>
 
-<pre><code>mvn archetype:generate -DgroupId=com.openenglish.maven -DartifactId=maven-training-base-module -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+<pre><code>mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base-module -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 </code></pre>
 
 <p>By running an artifact creation like this, standing over an existing pom location it will automatically add the new artifact as a child of it. In this case, the module added is a simple Java Main class with its default project structure.
@@ -92,7 +101,7 @@ This default structure is defined in the archetype itself and it contains the fo
 
 <p>Another child module is added, using a web application archetype</p>
 
-<pre><code>mvn archetype:generate -DgroupId=com.openenglish.maven -DartifactId=maven-training-base-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+<pre><code>mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 </code></pre>
 
 <p>This new module is added as well to the parent POM, but in this case the output structure is a bit different, as the archetype is different. We have an index.jsp, a web.xml, a resources folder, and some other elements that are common (or needed) for a really basic web application.</p>

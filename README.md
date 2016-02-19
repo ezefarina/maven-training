@@ -1,15 +1,15 @@
 # Maven Interactive Tutorial - Git based
 
 ### Steps reference
-* Step 1: Parent creation
-* Step 2: Module aggregation
-* Step 3: Second module aggregation
-* Step 4: Centralized dependencies management in parent POM
-* Step 5: Multi-module inherited properties
-* Step 6: Profiles to alter a lifecycle
-* Step 7: Plugin basic configuration
-* Step 8: Centralized plugins management in parent POM
-* Step 9: Controlled plugin configuration inheritance
+* Step 1: [Parent creation](#parent-creation)
+* Step 2: [Module aggregation](#module-aggregation)
+* Step 3: [Second module aggregation](#second-module-aggregation)
+* Step 4: [Centralized dependencies management in parent POM](#centralized-dependencies-management-in-parent-pom)
+* Step 5: [Multi-module inherited properties](#multi-module-inherited-properties)
+* Step 6: [Profiles to alter a lifecycle](#profiles-to-alter-a-lifecycle)
+* Step 7: [Plugin basic configuration](#plugin-basic-configuration)
+* Step 8: [Centralized plugins management in parent POM](#centralized-plugins-management-in-parent-pom)
+* Step 9: [Controlled plugin configuration inheritance](#controlled-plugin-configuration-inheritance)
 
 ### Parent creation
 Parent POM file is created with the following archetype

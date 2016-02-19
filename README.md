@@ -2,9 +2,10 @@
 
 ### Steps reference
 * Step 1: Parent creation
+* Step 2: Module aggregation
 
 ### Parent creation
-Parent POM file was created with the following archetype
+Parent POM file is created with the following archetype
 ```
 mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root -DinteractiveMode=false
 ```
@@ -22,3 +23,18 @@ Defined the following elements:
 For full POM reference you can check the [official specification](http://maven.apache.org/ref/3.3.9/maven-model/maven.html)
 
 And [here](https://gist.github.com/zbigniewTomczak/4235871) is a good list of available archetypes
+
+### Module aggregation
+A child module is added, based on the following archetype
+```
+mvn archetype:generate -DgroupId=com.ezefarina.maven -DartifactId=maven-training-base-module -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+By running an artifact creation like this, standing over an existing pom location it will automatically add the new artifact as a child of it. In this case, the module added is a simple Java Main class with its default project structure.
+This default structure is defined in the archetype itself and it contains the following components:
+* Module folder
+* Java main class for standalone execution
+* Test class for the java class created
+* Own POM file
+* JUnit added as a default dependency
+* (conditional) Module added as a child if there's a POM to do so in the current location
+

@@ -8,6 +8,7 @@
 * Step 5: Multi-module inherited properties
 * Step 6: Profiles to alter a lifecycle
 * Step 7: Plugin basic configuration
+* Step 8: Centralized plugins management in parent POM
 
 ### Parent creation
 Parent POM file is created with the following archetype
@@ -74,3 +75,9 @@ Fur further info about check [this other one](http://maven.apache.org/guides/int
 ### Plugin basic configuration
 You would need to configure a plugin when you need to attach a specific functionality to a specific phase. In this example, we are speficying which should be the name of the output WAR file on the webapp module. In this case the *maven-war-plugin* is the default plugin used for war packaging during *package* phase. In this case we are explicitly adding it to parametrize the final name this war will have (of course you are able to do a lot more than this, it's just a simple example).
 Each plugin has a default phase defined, that it will be attached to if you don't define a different one.
+
+### Centralized plugins management in parent POM
+As well as you are able to centralize dependencies configuration on the parent POM in order to inherit these definitions and make them common to all the submodules, you can do just the same with the plugins. This will be more powerful than the dependencies inheritance, as a plugin has a lot of configurations that the dependencies doesn't.
+In this example we are moving this config to the parent POM, and only inheriting it into the WebApp module. This is done by defining the *<pluginManagement>* tag
+
+This is the [official doc](http://maven.apache.org/pom.html#Plugin_Management) about the plugin management functions

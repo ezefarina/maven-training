@@ -62,3 +62,6 @@ Each plugin has a default phase defined, that it will be attached to if you don'
 ### Centralized plugins management in parent POM
 As well as you are able to centralize dependencies configuration on the parent POM in order to inherit these definitions and make them common to all the submodules, you can do just the same with the plugins. This will be more powerful than the dependencies inheritance, as a plugin has a lot of configurations that the dependencies doesn't.
 In this example we are moving this config to the parent POM, and only inheriting it into the WebApp module. This is done by defining the *<pluginManagement>* tag
+
+### Controlled plugin configuration inheritance
+While working with pluginManagement, you can centralize a lot of configurations, but there would be the case where for a specific module you don't want to inherit the configurations as is (maybe this module has a particularity). In this case, you have the option to append, merge or override the configuration. This is the case of this example. We are overriding the incoming plugin configuration from the parent POM by setting the attribute *combine.self="override"*
